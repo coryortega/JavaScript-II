@@ -2,33 +2,35 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+// function higherOrderFunction(num1, num2, callback){
+//   return callback(num1, num2);
+// }
 
-  // GIVEN THIS PROBLEM:
+  // // GIVEN THIS PROBLEM:
 
   function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
+  //   // firstItem passes the first item of the given array to the callback function.
   }
 
-  // SOLUTION:
+  // // SOLUTION:
 
   function firstItem(arr, cb) {
     return cb(arr[0]);
   }
 
-  // NOTES ON THE SOLUTION:
+  // // NOTES ON THE SOLUTION:
 
-  // firstItem is a higher order function.
-  // It expects a callback (referred to as `cb`) as its second argument.
-  // To test our solution, we can use the given `items` array and a variety of callbacks.
-  // Note how callbacks can be declared separately, or inlined.
+  // // firstItem is a higher order function.
+  // // It expects a callback (referred to as `cb`) as its second argument.
+  // // To test our solution, we can use the given `items` array and a variety of callbacks.
+  // // Note how callbacks can be declared separately, or inlined.
 
-  // TEST 1 (inlined callback):
+  // // TEST 1 (inlined callback):
 
   const test1 = firstItem(items, item => `I love my ${item}!`);
   console.log(test1); // "I love my Pencil!"
 
-  // TEST 2 (declaring callback before hand):
+  // // TEST 2 (declaring callback before hand):
 
   function logExorbitantPrice(article) {
     return `this ${article} is worth a million dollars!`;
@@ -36,7 +38,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   const test2 = firstItem(items, logExorbitantPrice);
   console.log(test2); // "this Pencil is worth a million dollars!"
-*/
+
 
 
 function getLength(arr, cb) {
