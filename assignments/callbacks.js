@@ -2,21 +2,21 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-// function higherOrderFunction(num1, num2, callback){
-//   return callback(num1, num2);
-// }
+function arr(array, callback){
+  return callback(array[0]);
+}
 
   // // GIVEN THIS PROBLEM:
 
-  function firstItem(arr, cb) {
+  // function firstItem(arr, cb) {
   //   // firstItem passes the first item of the given array to the callback function.
-  }
+  // }
 
   // // SOLUTION:
 
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
+  // function firstItem(arr, cb) {
+  //   return cb(arr[0]);
+  // }
 
   // // NOTES ON THE SOLUTION:
 
@@ -27,17 +27,17 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
   // // TEST 1 (inlined callback):
 
-  const test1 = firstItem(items, item => `I love my ${item}!`);
-  console.log(test1); // "I love my Pencil!"
+  // const test1 = firstItem(items, item => `I love my ${item}!`);
+  // console.log(test1); // "I love my Pencil!"
 
   // // TEST 2 (declaring callback before hand):
 
-  function logExorbitantPrice(article) {
-    return `this ${article} is worth a million dollars!`;
-  };
+  // function logExorbitantPrice(article) {
+  //   return `this ${article} is worth a million dollars!`;
+  // };
 
-  const test2 = firstItem(items, logExorbitantPrice);
-  console.log(test2); // "this Pencil is worth a million dollars!"
+  // const test2 = firstItem(items, logExorbitantPrice);
+  // console.log(test2); // "this Pencil is worth a million dollars!"
 
 
 
