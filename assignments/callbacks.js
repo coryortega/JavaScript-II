@@ -41,9 +41,9 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 
-function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
-}
+// function getLength(arr, cb) {
+//   // getLength passes the length of the array into the callback.
+// }
 
 function getLength(arr, cb) {
   return (cb(arr.length));
@@ -91,11 +91,10 @@ console.log(multiplyNums(5, 6, multiply));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
-
-function getLength(arr, cb) {
- 
-}
+  return cb(list.includes(item));
+};
+ contains('yo-yo', items, result =>
+ console.log(result));
 
 /* STRETCH PROBLEM */
 
