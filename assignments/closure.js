@@ -4,6 +4,23 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function country(countryName){
+  const lang1 ='English'
+console.log(`I live in the ${countryName}`);
+
+  function state(stateName){
+    const food = "Hamburgers";
+    console.log(`The state I reside in iis ${stateName} and i just love ${food}`);
+
+    function City(cityName){
+      console.log(`${cityName} is the name of the city in ${stateName} that I live in. Everyone around here speaks ${lang1} and eats ${food}`);
+    
+    }//closes the city
+    City('Orange');
+  } //closes the state
+  state('California');
+}//closes the country
+country('USA');
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
@@ -31,3 +48,5 @@ const counterFactory = () => {
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
 };
+
+// global (the world)

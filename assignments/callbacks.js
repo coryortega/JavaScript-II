@@ -2,63 +2,99 @@
 
 const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
-/* 
+// function higherOrderFunction(arr, cb){
+//   return cb(arr[0]);
+// }
 
-  // GIVEN THIS PROBLEM:
+  // // GIVEN THIS PROBLEM:
 
-  function firstItem(arr, cb) {
-    // firstItem passes the first item of the given array to the callback function.
-  }
+  // function firstItem(arr, cb) {
+  //   // firstItem passes the first item of the given array to the callback function.
+  // }
 
-  // SOLUTION:
+  // // SOLUTION:
 
-  function firstItem(arr, cb) {
-    return cb(arr[0]);
-  }
+  // function firstItem(arr, cb) {
+  //   return cb(arr[0]);
+  // }
 
-  // NOTES ON THE SOLUTION:
+  // // NOTES ON THE SOLUTION:
 
-  // firstItem is a higher order function.
-  // It expects a callback (referred to as `cb`) as its second argument.
-  // To test our solution, we can use the given `items` array and a variety of callbacks.
-  // Note how callbacks can be declared separately, or inlined.
+  // // firstItem is a higher order function.
+  // // It expects a callback (referred to as `cb`) as its second argument.
+  // // To test our solution, we can use the given `items` array and a variety of callbacks.
+  // // Note how callbacks can be declared separately, or inlined.
+
+  // // TEST 1 (inlined callback):
+
+  // const test1 = firstItem(items, item => `I love my ${item}!`);
+  // console.log(test1); // "I love my Pencil!"
+
+  // // TEST 2 (declaring callback before hand):
+
+  // function logExorbitantPrice(article) {
+  //   return `this ${article} is worth a million dollars!`;
+  // };
+
+  // const test2 = firstItem(items, logExorbitantPrice);
+  // console.log(test2); // "this Pencil is worth a million dollars!"
+
+
+
+// function getLength(arr, cb) {
+//   // getLength passes the length of the array into the callback.
+// }
+
+function getLength(arr, cb) {
+  return (cb(arr.length));
+}
 
   // TEST 1 (inlined callback):
 
-  const test1 = firstItem(items, item => `I love my ${item}!`);
-  console.log(test1); // "I love my Pencil!"
-
-  // TEST 2 (declaring callback before hand):
-
-  function logExorbitantPrice(article) {
-    return `this ${article} is worth a million dollars!`;
-  };
-
-  const test2 = firstItem(items, logExorbitantPrice);
-  console.log(test2); // "this Pencil is worth a million dollars!"
-*/
-
-
-function getLength(arr, cb) {
-  // getLength passes the length of the array into the callback.
-}
+  const test1 = getLength(items, item => `If this number ---> ${item} <--- is 4, I will be so happy!`);
+  console.log(test1);
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
 }
 
+function last(arr, cb){
+  return (cb(arr[3]));
+};
+
+const test2 = last(items, item => `If this ---> ${item} <--- says "Gum", I will be so happy!`);
+console.log(test2);
+
 function sumNums(x, y, cb) {
+  return cb(x, y);
   // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
 
+const add = (x, y) =>{
+  return x + y;
+}
+
+console.log(sumNums(5, 6, add));
+
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x, y);
 }
+
+const multiply = (x, y) =>{
+  return x * y;
+}
+
+console.log(multiplyNums(5, 6, multiply));
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
-}
+  return cb(list.includes(item));
+};
+ contains('yo-yo', items, result =>
+ console.log(result));
 
 /* STRETCH PROBLEM */
 
